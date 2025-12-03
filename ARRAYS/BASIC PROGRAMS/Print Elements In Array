@@ -1,0 +1,33 @@
+package arrays;
+
+import java.util.Arrays;
+
+public class Print Basic_Program_1
+{
+    public static void main(String[]args)
+    {
+    	
+    	//Print all elements of an array
+    	
+    	int arr[]= {1,2,3,4,5};
+
+//printing elements using for loop
+    	for(int i=0;i<arr.length;i++)  // for loop
+    	{
+    	System.out.print(arr[i]+" ");
+    	}
+    	System.out.println(" ");
+
+
+//printing elements using toString  	
+    	System.out.println(Arrays.toString(arr));  
+    	
+    	
+//printing elements using for each loop
+    	for(int b: arr)                   
+    	{
+    		System.out.print(b+" ");
+    	}
+    	
+    }
+}
