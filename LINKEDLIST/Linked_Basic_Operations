@@ -1,3 +1,16 @@
+/*
+public class Node 
+{
+  int data;
+  Node next;
+  
+  public Node(int data)
+  {
+	  this.data=data;
+	  next=null;
+  }
+}
+*/
 package linkedlist;
 import java.util.LinkedList;
 public class LinkCreation 
@@ -94,9 +107,26 @@ public class LinkCreation
 	   }
 	  System.out.println(node.data);
    }
-   
-   
-   
-   
-   
+    
 }
+/*
+public class LinkCreationMain 
+{
+	public static void main(String[]args) 
+	{
+		
+	
+		  LinkCreation list = new LinkCreation();  
+        list.insert(5);
+        list.insert(6);
+        list.insert(7);
+        list.insert(100);
+        list.insert(101);
+        list.delete(6);
+        list.addFirst(1000);
+       list.insertionbetween(100,101,8);
+        list.show();
+    }
+}
+*/
+
