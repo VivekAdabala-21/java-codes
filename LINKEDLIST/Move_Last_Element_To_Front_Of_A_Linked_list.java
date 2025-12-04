@@ -2,20 +2,18 @@ package linkedlist;
 
 public class Move_Last_Element_To_Front_Of_A_Linked_list 
 {
-	class Node
+ /* class Node
 	{
 	    int data;
 	    Node next;
 
-	    Node(int x){
+	    Node(int x)
+		{
 	        data = x;
 	        next = null;
 	    }
 	}
-
-	
-
-	class Solution {
+  */
 	    public static Node moveToFront(Node head) {
 	        
 	        Node newNode=null;
@@ -24,12 +22,9 @@ public class Move_Last_Element_To_Front_Of_A_Linked_list
 	        Node last=null;
 	        while(temp!=null &&temp.next!=null)
 	        {
-	            
 	            prev=temp;
-	            temp=temp.next;
-	              
+	            temp=temp.next;     
 	        }
-	        
 	        prev.next=last;
 	        newNode= temp;
 	        newNode.next=head;
@@ -40,3 +35,4 @@ public class Move_Last_Element_To_Front_Of_A_Linked_list
 	}
 
 }
+
