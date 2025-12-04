@@ -1,16 +1,3 @@
-/*
-public class Node 
-{
-  int data;
-  Node next;
-  
-  public Node(int data)
-  {
-	  this.data=data;
-	  next=null;
-  }
-}
-*/
 package linkedlist;
 import java.util.LinkedList;
 public class LinkCreation 
@@ -105,7 +92,7 @@ public class LinkCreation
 		   System.out.println(node.data);
 		   node=node.next;
 	   }
-	  System.out.println(node.data);
+	   System.out.println(node.data);
    }
     
 }
@@ -129,4 +116,5 @@ public class LinkCreationMain
     }
 }
 */
+
 
