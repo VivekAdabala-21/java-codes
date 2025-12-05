@@ -1,0 +1,43 @@
+class Solution {
+    public ListNode swapPairs(ListNode head) 
+    {
+        if (head == null || head.next == null)
+        {
+            return head;
+        }
+
+        ListNode prev = null;
+        ListNode temp = head;
+        ListNode curr = null;
+
+        head = head.next;   // new head after first swap
+
+        ListNode last = null;  // to connect previous swapped pair
+
+        while (temp != null && temp.next != null)
+        {
+            prev = temp;          // 1st node       3
+            temp = temp.next;     // 2nd node       4
+            curr = temp.next;     // next start 3   null
+
+            // swap
+            temp.next = prev;
+            prev.next = curr;
+
+            // connect previous swapped pair
+            if (last != null)
+            {
+                last.next = temp;
+            }
+
+            // update last to the tail of this swapped pair
+            last = prev;
+
+            // move to next pair
+            temp = curr;
+        }
+
+        return head;
+     
+    }
+}
