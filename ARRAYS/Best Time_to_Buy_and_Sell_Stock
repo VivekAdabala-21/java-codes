@@ -1,0 +1,47 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+       int n= prices.length;
+       int a=0;
+        int i=0;
+//USING TWO LOOPS
+       for(int i=0;i<n;i++)
+        {
+            int b=0;
+            for(int j=i+1;j<n;j++)
+            {
+                if(prices[i]<prices[j])
+                {
+                    b=prices[j]-prices[i];
+                }
+                if(b>a)
+                {
+                    a=b;
+                }
+            }
+        }
+        return a;
+
+
+
+//USING SINGLE LOOP
+        int min = prices[0];   
+        int max = 0;          
+
+        for (int i = 1; i <n; i++) {
+
+            int profit = prices[i] - min;  
+        
+            if (profit > max) {
+                max = profit;
+            }
+
+            
+            if (prices[i] < min) 
+            {
+                min = prices[i];
+            }
+        }
+
+        return max;
+    }
+}
