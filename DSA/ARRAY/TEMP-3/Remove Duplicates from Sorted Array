@@ -1,0 +1,25 @@
+class Solution {
+    public int removeDuplicates(int[] nums)
+    {
+        int n =nums.length;
+        int current =nums[0];
+        int j=0;
+          for(int i=1;i<n;i++)
+	       {
+	         if(current==nums[i])
+	         {
+	            continue;
+	         }
+	         else
+	         {
+	            j++;
+	            nums[j]=nums[i];
+	            current=nums[j];
+	         }
+             
+	       }
+           return j+1;
+
+         
+    }
+}
