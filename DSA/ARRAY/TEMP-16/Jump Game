@@ -1,0 +1,35 @@
+class Solution {
+    public boolean canJump(int[] nums) {
+       // int n=nums.length;
+    
+
+
+        int n = nums.length;
+        int i = n - 1;   
+        while (i > 0) {
+            boolean found = false;
+
+            
+            for (int j = i - 1; j >= 0; j--) 
+            {
+
+                if (nums[j] + j >= i)
+                {   
+                    i = j;               
+                    found = true;
+                    break;               
+                }
+            }
+
+            if (found!=true)
+            {
+                return false; 
+            } 
+        }
+
+        return true; 
+
+
+      
+    }
+}
