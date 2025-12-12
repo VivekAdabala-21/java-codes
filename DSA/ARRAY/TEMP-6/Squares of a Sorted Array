@@ -1,0 +1,30 @@
+class Solution {
+    public int[] sortedSquares(int[] nums)
+    {
+        int n = nums.length;
+        int res[] = new int[n];
+
+        // step 1: square all values
+        for(int i = 0; i < n; i++){
+            nums[i] = nums[i] * nums[i];
+        }
+
+        int left = 0;
+        int right = n - 1;
+        int k = n - 1;   // pointer for result array
+
+        // step 2: fill res from end
+        while(left <= right) {
+            if(nums[left] > nums[right]) {
+                res[k] = nums[left];
+                left++;
+            } else {
+                res[k] = nums[right];
+                right--;
+            }
+            k--;   // move result pointer to left
+        }
+
+        return res;
+    }
+}
