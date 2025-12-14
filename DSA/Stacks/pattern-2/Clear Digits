@@ -1,0 +1,37 @@
+class Solution {
+    public String clearDigits(String s) {
+        //Stack<Object> stack= new Stack<>();
+         Stack<Character> stack = new Stack<>();
+
+        for (char a : s.toCharArray()) {
+            if (stack.isEmpty()) {
+                stack.push(a);
+            } 
+            else if (Character.isDigit(a) && Character.isLetter(stack.peek())) {
+                stack.pop();
+            } 
+            else if (Character.isLetter(a) && Character.isDigit(stack.peek())) {
+                stack.pop();
+            } 
+            else {
+                stack.push(a);
+            }
+        }
+
+        /*String remain="";
+        while(!stack.isEmpty())
+        {
+            int b=stack.pop();
+            remain=remain+b;
+        }
+        return remain;*/
+        StringBuilder remain = new StringBuilder();
+        while (!stack.isEmpty()) {
+            remain.append(stack.pop());
+        }
+
+        
+        return remain.reverse().toString();
+        
+    }
+}
