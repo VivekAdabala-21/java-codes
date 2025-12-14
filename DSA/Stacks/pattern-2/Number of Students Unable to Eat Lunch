@@ -1,0 +1,32 @@
+class Solution {
+    public int countStudents(int[] students, int[] sandwiches) {
+       Queue<Integer> q = new ArrayDeque<>();
+       //queue is interface we can,t create it directly
+       Stack<Integer> s=new Stack<>();
+        for(int i=sandwiches.length-1;i>=0;i--)
+        {
+            s.push(sandwiches[i]);
+        }
+        for(int a:students)
+        {
+            q.offer(a); 
+        }
+          int circle = 0;
+
+        while (!q.isEmpty() && circle < q.size()) {
+            int student = q.poll();
+
+            if (student == s.peek()) {
+                // student eats sandwich
+                s.pop();
+                circle = 0;
+            } else {
+                // student goes to end of the queue
+                q.offer(student);
+                circle++;
+            }
+        }
+
+        return q.size();
+    }
+}
