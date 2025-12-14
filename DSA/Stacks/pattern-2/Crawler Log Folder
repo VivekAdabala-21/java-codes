@@ -1,0 +1,28 @@
+class Solution {
+    public int minOperations(String[] logs) {
+        Stack<String> stack=new Stack<>();
+         for (String ch : logs) 
+         {
+
+            if (ch.equals("../")) 
+            {
+                if (!stack.isEmpty()) 
+                {
+                    stack.pop();
+                }
+            }
+            else if (ch.equals("./")) 
+            {
+                continue;
+            }
+            else 
+            {
+                
+                stack.push(ch);
+            }
+        }
+
+        return stack.size();
+      
+    }
+}
