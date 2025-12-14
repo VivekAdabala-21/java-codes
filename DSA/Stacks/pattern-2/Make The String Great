@@ -1,0 +1,32 @@
+class Solution {
+    public String makeGood(String s) {
+        Stack<Character> stack = new Stack<>();
+        for (char ch : s.toCharArray()) {
+
+            if (!stack.isEmpty()) {
+                char top = stack.peek();
+
+                if (Character.toLowerCase(ch) == Character.toLowerCase(top)
+                        && ch != top) 
+                {
+                    stack.pop();
+                    continue;
+                }
+            }    
+            stack.push(ch);
+        }
+        String m = "";
+        while (!stack.isEmpty())
+        {
+            m = m + stack.pop();
+        }
+
+        String rev = "";
+        for (int i = m.length() - 1; i >= 0; i--)
+        {
+            rev += m.charAt(i);
+        }
+
+        return rev;
+    }
+}
