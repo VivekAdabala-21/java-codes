@@ -1,0 +1,25 @@
+class Solution {
+    public int missingNumber(int[] nums) {
+       
+        Arrays.sort(nums);  
+        
+        int left = 0;
+        int right = nums.length - 1;
+
+        while (left <= right) {
+            int mid = (left + right )/ 2;
+
+            // If nums[mid] == mid, then missing number is on the right
+            if (nums[mid] == mid) {
+                left = mid + 1;
+            }
+            // If nums[mid] > mid, missing number is on the left
+            else {
+                right = mid - 1;
+            }
+        }
+
+        // left will point to the missing number
+        return left;
+    }
+}
