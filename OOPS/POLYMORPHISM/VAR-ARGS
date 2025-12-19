@@ -1,0 +1,33 @@
+public class Var 
+{
+  public void accept(Object...a)
+  {
+	 for(Object  b:a)
+	 {
+		 System.out.print(" "+b);
+	 }
+  }
+  
+  public void display(int a,String n,int...marks)
+  {
+	  System.out.print(a+" "+n);
+	  for(int c:marks)
+	  {
+		  System.out.print(c);
+	  }
+  }
+}
+
+//MAIN METHOD
+public class VarTest 
+{
+    public static void main(String[]args)
+    {
+    	  Var v = new Var();
+    	  v.accept();
+    	  v.accept(45);
+    	  v.accept(4,5,1,8);
+    	  v.accept("vivek","surya");
+    	  v.display(1, "box", 45,4,6);
+    }
+}
