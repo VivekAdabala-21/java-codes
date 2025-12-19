@@ -1,0 +1,41 @@
+public class Sum 
+{
+    public int add(int x,int y)
+    {
+    	int z=x+y;
+         return z;
+    }
+    public int add(char a,char b)
+    {
+    	int c=(int)a+(int)b;
+    	return c;
+    }
+    public String add(String a,String b)
+    {
+    	String c=a+b;
+    	return c;
+    }
+    public double add(double a,double b)
+    {
+    	double c=a+b;
+    	return c;
+    }
+    
+}
+
+
+//MAIN METHOD
+
+public class Sum_Test 
+{
+   public static void main(String[]args)
+   {
+	   Sum s= new Sum();
+	   int a=s.add(1,2);
+	   int b=s.add('a', 'b');
+	   String c=s.add("hello", "world");
+	   double d=s.add(2.0, 3.0);
+	   
+	   System.out.print(a+" "+b+" "+c+" "+d);
+   }
+}
