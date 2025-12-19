@@ -1,0 +1,40 @@
+public class Getter_Method
+{
+   private int empId= 401;
+   private String empPackage ="6.5 ctc";
+   private String empRole="DEVELOPER";
+   
+   
+   public int getempId()
+   {
+	   return empId;
+   }
+   public String getempPackage()
+   {
+	   return empPackage;
+   }
+   public String getempRolew()
+   {
+	   return empRole;
+   }
+   @Override
+   public String toString() {
+	return "Getter_Method [empId=" + empId + ", empPackage=" + empPackage + ", empRole=" + empRole + "]";
+   }
+   
+}
+
+//MAIN METHOD
+
+public class Getter_Method_Test {
+	public static void main(String[]aregs)
+	{
+		Getter_Method head = new Getter_Method();
+		System.out.println(head.getempId());
+		System.out.println(head.getempPackage());
+		System.out.println(head.getempRolew());
+		
+		System.out.println(head);
+	}
+
+}
