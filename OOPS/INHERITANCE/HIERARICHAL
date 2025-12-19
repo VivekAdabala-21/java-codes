@@ -1,0 +1,54 @@
+public class Institute 
+{
+  static String instName="VIT";
+  static String adress="Kphb";
+}
+class Student_1 extends Institute
+{
+	int std1_id;
+	String std1_name;
+	public Student_1(int std1_id, String std1_name) {
+		super();
+		this.std1_id = std1_id;
+		this.std1_name = std1_name;
+	}
+	@Override
+	public String toString() {
+		return "Student_1 [std1_id=" + std1_id + ", std1_name=" + std1_name + ", instName=" + instName
+				+ ", adress=" + adress+  "]";
+	}
+	
+	
+	
+	
+}
+class Student_2 extends Institute
+{
+	int std2_id;
+	String std2_name;
+	public Student_2(int std2_id, String std2_name) {
+		super();
+		this.std2_id = std2_id;
+		this.std2_name = std2_name;
+	}
+	@Override
+	public String toString() {
+		return "Student_1 [std1_id=" + std2_id + ", std1_name=" + std2_name + ", instName=" + instName
+				+ ", adress=" + adress+  "]";
+	}
+	
+	
+}
+
+//MAIN METHOD
+
+public class Hierarichal_Test 
+{
+  public static void main(String[]args)
+  {
+	  Student_1 st1=new Student_1(401,"vivek");
+	  System.out.println(st1);
+	  Student_2 st2=new Student_2(446,"surya");
+	  System.out.println(st2);
+  }
+}
