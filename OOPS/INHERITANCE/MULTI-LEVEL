@@ -1,0 +1,34 @@
+public class Grandfather 
+{
+ public void land()
+ {
+	 System.out.println("2000 sq.yuards");
+ }
+}
+class Father extends Grandfather
+{
+	public void home()
+	{
+		System.out.println("3-BHK house");
+	}
+}
+class Son extends Father
+{
+	public void Car()
+	{
+		System.out.println("supra");
+	}
+}
+
+//MAIN METHOD
+
+public class MultiLevel
+{
+	public static void main(String[]args)
+	{
+		 Son a = new Son();
+		 a.home();
+		 a.land();
+		 a.Car();
+	} 
+}
