@@ -35,23 +35,14 @@ class Sub_Inhertance extends Inheritance
 
 /MAIN METHOD
 package practice;
-import java.util.*;
-public class Encapusulation_test 
+
+public class Inheritance_Test 
 {
- public static void main(String[]args)
- {
-	 Encapusulation bank=new Encapusulation("virat",1845);
-	 Scanner sc=new Scanner(System.in);
-	 
-	 System.out.println("\t\t\t\t\t\t welcome to hdfc atm");
-	 System.out.println("\n TOcheck balance enter a pin ");
-	 int pin =sc.nextInt();
-	 bank.checkBalance(pin);
-	 bank.deposit(7000.0);
-	 
-	 System.out.println(" for withdraw enter balance:");
-	 double withdraw=sc.nextDouble();
-	 bank.withdraw(withdraw,1845);
- }
-}
+  public static void main(String[]args)
+  {
+	  Sub_Inhertance a = new Sub_Inhertance();
+	  a.virat();
+	  a.rohit();
+  }
+} 
 
