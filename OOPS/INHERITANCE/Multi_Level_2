@@ -1,0 +1,50 @@
+public class Employee 
+{
+  int empId;
+  String name;
+  public Employee(int empId, String name) {
+	super();
+	this.empId = empId;
+	this.name = name;
+  }
+ 
+  
+}
+class TeamLead extends Employee
+{
+	String projName;
+	double salary;
+	public TeamLead(int empId, String name, String projName, double salary) {
+		super(empId, name);
+		this.projName = projName;
+		this.salary = salary;
+	}
+	
+}
+class Manager extends TeamLead
+{
+	String role;
+
+	public Manager(int empId, String name, String projName, double salary, String role) {
+		super(empId, name, projName, salary);
+		this.role = role;
+	}
+
+	@Override
+	public String toString() {
+		return "Manager [role=" + role + ", projName=" + projName + ", salary=" + salary + ", empId=" + empId
+				+ ", name=" + name + "]";
+	}
+
+}
+
+//MAIN METHOD
+
+public class Multi_Level_Test 
+{
+	public static void main(String[]args)
+	{
+      Manager m = new Manager(122,"vivek","telecom",180000.0,"project manager");
+      System.out.println(m);
+	}
+}
