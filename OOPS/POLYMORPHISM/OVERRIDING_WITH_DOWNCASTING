@@ -1,0 +1,26 @@
+public class Animal2 
+{
+  void sound()
+  {
+	  System.out.println("animal make sound");
+  }
+}
+class Dog extends Animal2
+{
+
+	@Override
+	void sound()
+	{
+		System.out.println("dog barks");
+	}
+	
+}
+//MAIN METHOD
+public class Animal2_Test 
+{
+ public static void main(String[]args)
+ {
+	 Dog d=(Dog) new Animal();    //java.lang.ClassCastException
+	 d.sound();
+ }
+}
