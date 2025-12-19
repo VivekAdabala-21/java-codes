@@ -1,0 +1,57 @@
+package practice;
+
+public class Inheritance 
+{
+   public void rohit()
+   {
+	   String name="rohit";
+	   int runs=20000;
+	   int centuries=33;
+	   int doubleCenturies=3;
+	   String role="INDIAN CAPTAIN";
+	   
+	   System.out.println("name:"+name+"  runs:"+runs+"  centuries"+centuries+"  doubleCenturies"+doubleCenturies+"  role"+role);
+	   
+   }
+
+   
+   
+}
+class Sub_Inhertance extends Inheritance
+{
+	public void virat()
+	   {
+		   String name="virat";
+		   int runs=28000;
+		   int centuries=53;
+		   int doubleCenturies=1;
+		   String role="INDIAN KING";
+		   
+		   System.out.println("name:"+name+"  runs:"+runs+"  centuries"+centuries+"  doubleCenturies"+doubleCenturies+" role"+role);
+		   
+	   }
+}
+
+
+/MAIN METHOD
+package practice;
+import java.util.*;
+public class Encapusulation_test 
+{
+ public static void main(String[]args)
+ {
+	 Encapusulation bank=new Encapusulation("virat",1845);
+	 Scanner sc=new Scanner(System.in);
+	 
+	 System.out.println("\t\t\t\t\t\t welcome to hdfc atm");
+	 System.out.println("\n TOcheck balance enter a pin ");
+	 int pin =sc.nextInt();
+	 bank.checkBalance(pin);
+	 bank.deposit(7000.0);
+	 
+	 System.out.println(" for withdraw enter balance:");
+	 double withdraw=sc.nextDouble();
+	 bank.withdraw(withdraw,1845);
+ }
+}
+
