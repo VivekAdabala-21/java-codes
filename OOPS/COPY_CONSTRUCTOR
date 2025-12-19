@@ -1,0 +1,47 @@
+package practice;
+
+public class Person 
+{
+   String name;
+   String nickName;
+   int runs;
+   
+   public Person(String name, String nickName, int runs) 
+    {
+	   super();
+	   this.name = name;
+	   this.nickName = nickName;
+     this.runs = runs;
+    }
+   
+  public Person(Person user)
+  {
+	  this.name = user.name;
+	  this.nickName = user.nickName;
+	  this.runs = user.runs;
+  }
+
+   public void display()
+   {
+	   System.out.println(name);
+	   System.out.println(nickName);
+	   System.out.println(runs);
+   }
+}
+
+//MAIN METHOD
+
+package practice;
+
+public class PersonTest 
+{
+  public static void main(String[]args)
+  {
+	  Person p = new Person("virat","chiku",28000);
+	 
+	  p.display();
+	  Person p2 = new Person(p);
+	  p2.display();
+  }
+}
+   
