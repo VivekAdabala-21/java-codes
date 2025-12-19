@@ -1,0 +1,55 @@
+
+public class Data_Hiding 
+{
+   String name;
+   private double balance =100000;
+   public Data_Hiding(String name) {
+	super();
+	this.name = name;
+	//balance = balance;
+   }
+   
+   public void deposit(int amount)
+   {  if(amount>0)
+      {
+	   balance=balance + amount;
+	  
+	   System.out.println(balance);
+      }
+      else
+      {
+	   System.out.println("deposit amount must be positive");
+      }
+   }
+   public void withdraw(int amount)
+   {
+	   double maxWithdraw=balance;
+	   if(amount >0 && amount< maxWithdraw)
+	   {
+		   balance-=amount;
+		   System.out.println(balance);
+		   
+	   }
+	   else
+	   {
+		   System.out.println("enter valid number");
+	   }
+   }
+   
+}
+
+
+//MAIN METHOD
+
+public class Data_Hiding_Test
+{
+  public static void main(String[]args)
+  {
+	  Data_Hiding nam = new Data_Hiding("vivek");
+	  //System.out.print(nam.balance);
+	  System.out.println(nam.name);
+	  
+	  nam.deposit(5000);
+	  nam.withdraw(10000);
+  }
+}
