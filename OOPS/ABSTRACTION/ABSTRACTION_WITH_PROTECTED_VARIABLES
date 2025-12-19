@@ -1,0 +1,28 @@
+abstract class Bat 
+{
+  protected int speed= 120;
+  public abstract void run();
+  public int getSpeed()
+  {
+	  return speed;
+  }
+}
+class Ball extends Bat
+{
+	@Override
+	public void run()
+	{
+		System.out.println("bat belongs to virat");
+	}
+}
+//MAIN METHOD
+
+public class Bat_Test 
+{
+  public static void main(String[]args)
+  {
+	  Bat b=new Ball();
+	  System.out.print("bat speed is "+b.speed);
+	  b.run();
+  }
+}
