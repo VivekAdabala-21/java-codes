@@ -1,0 +1,88 @@
+package practice;
+
+public class Encapusulation 
+{
+  private String holdername;
+  private double balance;
+  private int pin;
+  public Encapusulation(String holdername, int pin) {
+	super();
+	this.holdername = holdername;
+	this.pin = pin;
+  }
+  
+  //TO CHECK THE BALANCE
+  
+  public void checkBalance(int enteredPin)
+  {
+	  if(pin==enteredPin)
+	  {
+		  System.out.println("availabnle balance is "+balance);
+	  }
+	  else
+	  {
+		  System.err.print("incorrect pin");
+	  }
+  }
+  
+  
+  //DEPOSIT METHOD
+  
+  public void deposit(double amount)
+  {
+	  if(amount>0)
+	  {
+		  balance +=amount;
+		  System.out.println("after deposit your balance:"+balance);
+	  }
+  }
+  
+  //withdraw method with simple validation
+  
+  public void withdraw(double amount,int enteredPin)
+  {
+	  if(pin==enteredPin)
+	  {
+		  if(amount>0 && amount<=balance)
+		  {
+			  balance -=amount;
+			  System.out.println("after withdraw your balance:"+balance);
+		  }
+		  else
+		  {
+			  System.err.println("insuffient balance");
+		  }
+		  
+	  }
+	  else
+	  {
+		  System.out.println("invalid pin");
+	  }
+	  
+	  
+  }
+}
+
+
+//MAIN METHOD
+
+package practice;
+import java.util.*;
+public class Encapusulation_test 
+{
+ public static void main(String[]args)
+ {
+	 Encapusulation bank=new Encapusulation("virat",1845);
+	 Scanner sc=new Scanner(System.in);
+	 
+	 System.out.println("\t\t\t\t\t\t welcome to hdfc atm");
+	 System.out.println("\n TOcheck balance enter a pin ");
+	 int pin =sc.nextInt();
+	 bank.checkBalance(pin);
+	 bank.deposit(7000.0);
+	 
+	 System.out.println(" for withdraw enter balance:");
+	 double withdraw=sc.nextDouble();
+	 bank.withdraw(withdraw,1845);
+ }
+}
