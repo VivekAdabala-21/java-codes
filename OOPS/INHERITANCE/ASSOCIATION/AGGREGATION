@@ -1,0 +1,54 @@
+//FILE-1
+
+public class Company 
+{
+  private int cmpId;
+  private String cmpNmae;
+  private String cmpAddress;
+  public Company(int cmpId, String cmpNmae, String cmpAddress) {
+	super();
+	this.cmpId = cmpId;
+	this.cmpNmae = cmpNmae;
+	this.cmpAddress = cmpAddress;
+  }
+  @Override
+  public String toString() {
+	return "Company [cmpId=" + cmpId + ", cmpNmae=" + cmpNmae + ", cmpAddress=" + cmpAddress + "]";
+  }
+}
+
+// FILE-2
+
+public class Employe 
+{
+  private int empId;
+  private String empName;
+  private String empRole;
+  private Company company;
+  public Employe(int empId, String empName, String empRole, Company company) {
+	super();
+	this.empId = empId;
+	this.empName = empName;
+	this.empRole = empRole;
+	this.company = company;
+  }
+  @Override
+  public String toString() {
+	return "Employe [empId=" + empId + ", empName=" + empName + ", empRole=" + empRole + ", company=" + company + "]";
+  }
+  
+}
+
+
+//MAIN METHOD
+
+public class Aggregation_ 
+{
+ public static void main(String[]args)
+ {
+	 Company c=new Company(002,"TCS","hyderabad");
+	 Employe e=new Employe(401,"viraj","Manager",c);
+	 System.out.println(e);
+	 System.out.println(c);
+ }
+}
