@@ -1,0 +1,35 @@
+class King 
+{
+
+}
+class Queen extends King
+{
+	
+}
+class Super
+{
+	public King won()
+	{
+		System.out.print("Super.won()");
+		return new King();
+	}
+}
+class Sub extends Super
+{
+	@Override
+	public Queen won()
+	{
+		System.out.print("Sub.won()");
+		return new Queen();
+	}
+}
+
+//MAIN METHOD
+public class King_test 
+{
+  public static void main(String[]args)
+  {
+	  Super s=new Sub();
+	  s.won();
+  }
+}
