@@ -1,0 +1,40 @@
+public class Setter_Method 
+{
+   private long uan;
+   private String holdername;
+   private String doj;
+   private double balance;
+   public Setter_Method(long uan, String holdername, String doj, double balance) {
+	super();
+	this.uan = uan;
+	this.holdername = holdername;
+	this.doj = doj;
+	this.balance = balance;
+   }
+   public void setuan(long uan)
+   {
+	   this.uan=uan;
+   }
+   public void setholdername(String holdername)
+   {
+	   this.holdername=holdername;
+   }
+   
+   @Override
+    public String toString() {
+	return "Setter_Method [uan=" + uan + ", holdername=" + holdername + ", doj=" + doj + ", balance=" + balance + "]";
+    }
+}
+
+//MAIN METHOD
+public class Setter_Method_Test 
+{
+    public static void main(String[]args)
+    {
+    	Setter_Method head = new Setter_Method(701984938,"vivek","21-09-1999",10000000);
+    	 System.out.println(head);
+    	 head.setuan(601984938);
+    	 head.setholdername("surya");
+    	 System.out.println(head);
+    }
+}
