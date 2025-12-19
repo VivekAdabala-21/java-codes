@@ -1,0 +1,46 @@
+abstract class Animall 
+{
+  protected String eatType;
+  public Animall(String type)
+  {
+	  this.eatType=type;
+  }
+  public abstract void eat();
+}
+class Horse extends Animall
+{
+	public Horse(String type)
+	{
+		super(type);
+	}
+	@Override
+	public void eat()
+	{
+		System.out.println("Horse food type:"+eatType);
+	}
+}
+class Tiger extends Animall
+{
+	public Tiger(String type)
+	{
+		super(type);
+	}
+	@Override
+	public void eat()
+	{
+		System.out.println("Tiger food type:"+eatType);
+	}
+}	
+
+
+//MAIN METHOD
+
+public class Animall_Type 
+{
+ public static void main(String[]args)
+ {
+	  Animall v;
+	  v=new Horse("veg");v.eat();
+	  v=new Tiger("non-veg");v.eat();
+ }
+}
