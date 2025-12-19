@@ -1,7 +1,7 @@
 interface Runnable 
 {
   int SPEED=120; //PUBLIC+STATIC+FINAL
-   void run();
+   void run();   //PUBLIC+ABSTRACT
 }
 class Motorcycle implements Runnable
 {
