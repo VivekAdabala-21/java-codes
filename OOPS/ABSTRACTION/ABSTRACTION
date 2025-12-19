@@ -1,0 +1,32 @@
+abstract class Vehicle 
+{
+ public abstract void color();
+}
+class Bus extends Vehicle
+{
+	@Override
+	public void color()
+	{
+		System.out.println("Bus is in green color");
+	}
+}
+class Bike extends Vehicle
+{
+	@Override
+	public void color()
+	{
+		System.out.print("bike is in red&black color");
+	}
+}
+
+//MAIN METHOD
+
+public class Vehicle_Test 
+{
+  public static void main(String[]args)
+  {
+	  Vehicle v;
+	  v=new Bus();v.color();
+	  v=new Bike();v.color();
+  }
+}
