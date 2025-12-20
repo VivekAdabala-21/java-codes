@@ -1,0 +1,24 @@
+interface Runnable 
+{
+  int SPEED=120; //PUBLIC+STATIC+FINAL
+   void run();   
+}
+class Motorcycle implements Runnable
+{
+	@Override
+	public void run()
+	{
+		System.out.println("BIKE is moving with "+SPEED+"KMPH");
+	}
+	
+}
+//MAIN METHOD
+public class Runnable_Test 
+{
+   public static  void main(String[]args)
+   {
+	   Runnable r=new Motorcycle();
+	   r.run();
+	   System.out.println("Bus is moving with"+Runnable.SPEED+"kmph");
+   }
+}
