@@ -1,0 +1,46 @@
+interface BankData 
+{
+  void deposit(double amount);//public+abstract
+  void withdraw(double amount);//public+abstract
+  
+}
+class Customer implements BankData
+{
+	private double balance=10000;//Data-Hiding
+	@Override
+	public void deposit(double amount)
+	{
+		if(amount<0)
+		{
+			System.out.println("Zero balance can't deposit");
+		}
+		else
+		{
+			this.balance=balance+amount;
+			System.out.println("After deposit your balance is:"+balance);
+		}
+	}
+	@Override
+	public void withdraw(double amount)
+	{
+		if(amount>balance)
+		{
+			System.err.println("INSUFFIENT BALANCE");
+		}
+		else
+		{
+			this.balance=balance-amount;
+			System.out.println("after withdraw your balance is :"+balance);
+		}
+	}
+}
+
+//MAIN METHOD 
+public class BankData_Test 
+{
+  public static void main(String[]args) {
+	  Customer c=new Customer();
+	  c.deposit(2000);
+	  c.withdraw(2000);
+  }
+}
