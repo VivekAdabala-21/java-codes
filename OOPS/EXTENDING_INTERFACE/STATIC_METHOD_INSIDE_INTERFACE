@@ -1,0 +1,32 @@
+public interface MathCalculator 
+{
+	public static int rectangle(int length,int breadth)
+	{
+		return length*breadth;
+	}
+	public static int square(int side)
+	{
+		return side*side;
+	}
+	public static int cube(int side)
+	{
+		return 6*(side*side);
+	}
+}
+
+//MAIN METHOD
+public class MathCalculator_Test 
+{
+  public static void main(String[]args)
+  {
+	  int x=MathCalculator.rectangle(4,5);
+	  System.out.println("AREA OF RECTANGLE "+x);
+	  
+	  int y=MathCalculator.square(4);
+	  System.out.println("AREA OF RECTANGLE "+y);
+	  
+	  int z=MathCalculator.cube(4);
+	  System.out.println("AREA OF RECTANGLE "+z);
+  }
+}
+
