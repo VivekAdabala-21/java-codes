@@ -1,0 +1,54 @@
+interface AutoMobile 
+{
+  void Manufacture();
+}
+class Mobile implements AutoMobile
+{
+	@Override
+	 public void Manufacture()
+	{
+		System.out.println("Mobile is manufacturing");
+	}
+}
+class Laptop implements AutoMobile
+{
+	@Override 
+	public void Manufacture()
+	{
+		System.out.println("Laptop  is manufacturing ");
+	}
+}
+class Tab implements AutoMobile
+{
+	@Override 
+	public void Manufacture()
+	{
+		System.out.println("Tab  is manufacturing ");
+	}
+}
+class Company2
+{
+	
+	public static AutoMobile acceptAnyObject()
+	{
+		return new Laptop();
+	}
+	public static void acceptAnyObject(AutoMobile a)
+	{
+		a.Manufacture();
+	}
+}
+
+//MAIN METHOD
+public class AutoMobile_Test 
+{
+ public static void main(String[]args)
+ {
+	 AutoMobile a= Company2.acceptAnyObject();
+	 a.Manufacture();
+	 Company2.acceptAnyObject(new Mobile());
+	 Company2.acceptAnyObject(new Laptop());
+	 Company2.acceptAnyObject(new Tab());
+ }
+
+}
