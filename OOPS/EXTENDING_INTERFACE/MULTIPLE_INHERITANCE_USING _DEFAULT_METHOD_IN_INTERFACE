@@ -1,0 +1,34 @@
+interface Service 
+{
+   default void same()
+   {
+	   System.out.println(" action from service");
+   }
+}
+interface Process
+{
+	default void same()
+	{
+		System.out.println(" action from service");
+	}
+}
+class Accept implements Service,Process
+{
+	@Override
+	public void same()
+	{
+		Service.super.same();
+		Process.super.same();
+		System.out.println("Multiple inheritance done by interface");
+	}
+}
+
+//MAIN METHOD
+public class Service_Test 
+{
+   public static void main(String[]args)
+   {
+	   Accept t=new Accept();
+	   t.same();
+   }
+}
