@@ -1,0 +1,56 @@
+public interface MyInterface 
+{
+  //void test(); //JDK 1.0
+	
+	//DEFAULT METHOD USING PRIVATE NON-STTAIC METHOD
+	default void defaultMethodOne()
+	{
+		System.out.println("default method one executed");
+		commonInstanceLogic();  //CALLING PRIVATE NON-STATIC METHOD
+	}
+	
+	//ANOTHER DEFAULT METHOD USING SAME PRIVATE NON-STTAIC METHOD
+	default void defaultMethodTwo()
+	{
+		System.out.println("default method two executed");
+		commonInstanceLogic();  //CALLING PRIVATE NON-STATIC METHOD
+	}
+	
+	//STATIC METHOD USING PRIVATE STATIC METHOD
+	public static void staticMethod()
+	{
+		System.out.println("static method executed");
+		commonStaticLogic(); //CALLING PRIVATE STATIC METHOD
+	}
+	
+	//PRIVATE INSTANCE METHOD CAN BE USED IN DEFAULT METHODS
+	private void commonInstanceLogic()
+	{
+		System.out.println("common instance logic for default methods");
+	}
+	
+	//PRIVATE STATIC METHOD CAN BE USED IN DEFAULT AND IN STATIC METHOD
+	private static void commonStaticLogic()
+	{
+		System.out.println("common static logic");
+	}
+}
+
+//MAIN METHOD
+public  class MyInterface_Test implements MyInterface{
+	
+		   public static void main(String[]args)
+		   {
+			   MyInterface i =new MyInterface_Test();
+			   
+			   //CALLING DEFAULT METHODS
+			   
+			   i.defaultMethodOne();
+			   i.defaultMethodTwo();
+			   
+			   //CALLING STATIC METHODS
+			   MyInterface.staticMethod();
+		   }
+		
+
+}
