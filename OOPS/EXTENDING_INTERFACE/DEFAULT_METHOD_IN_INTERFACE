@@ -1,0 +1,64 @@
+//FILE-1
+
+public interface PaymentProcess 
+{
+  void onlinePayment(double balance);
+  default void swipe(double balance)
+  {
+	  
+  }
+}
+
+//FILE-2
+
+public class Flipkart implements PaymentProcess
+{
+  @Override
+  public void onlinePayment(double balance)
+  {
+	  System.out.println("ITEM PURCHASED BY FLIPKART:"+balance);
+  }	  
+}
+
+//FILE-3
+
+public class Myntra implements PaymentProcess
+{
+	@Override
+	  public void onlinePayment(double balance)
+	  {
+		  System.out.println("ITEM PURCHASED BY MYNTRA"+balance);
+	  }
+}
+
+//FILE-4
+
+public class Zudio implements PaymentProcess
+{
+	@Override
+	  public void onlinePayment(double balance)
+	  {
+		  System.out.println("ITEM PURCHASED BY ZUDIO:"+balance);
+	  }
+}
+
+//FILE-5
+
+public class PaymentTest 
+{
+  public static void main(String[]args)
+  {
+	  PaymentProcess pp=null;
+	  
+	  pp=new Flipkart();
+	  pp.onlinePayment(1400);
+	  
+	  pp=new Myntra();
+	  pp.onlinePayment(1500);
+	  
+	  pp=new Zudio();
+	  pp.onlinePayment(2500);
+	  
+	  pp.swipe(1000);
+  }
+}
