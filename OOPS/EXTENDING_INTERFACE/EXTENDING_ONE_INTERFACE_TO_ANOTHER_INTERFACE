@@ -1,0 +1,32 @@
+interface Notification 
+{
+   void sms();
+}
+interface EmailService extends Notification
+{
+	void email();
+}
+class AllService implements EmailService
+{
+	@Override
+	public void sms()
+	{
+		System.out.print("sms service");
+	}
+	@Override
+	public void email()
+	{
+	  System.out.println("email service");
+	}
+}
+
+//MAIN METHOD
+public class Notification_Test 
+{
+  public static void main(String[]args)
+  {
+	  AllService n= new AllService();
+	  n.sms();
+	  n.email();
+  }
+}
