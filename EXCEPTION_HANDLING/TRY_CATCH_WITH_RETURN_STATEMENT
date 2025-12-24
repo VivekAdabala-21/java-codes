@@ -1,0 +1,31 @@
+package com.vr.exception;
+
+public class ReturnStatementWithTryCatch
+{
+   public static void main(String[] args) 
+   {
+	   process();
+   }
+   
+   @SuppressWarnings("finally")
+   public static int process()
+   {
+	   try
+	   {
+		  
+		   System.out.println("This is try block...");
+		   return 10;
+	   }
+	   catch (Exception e) 
+	   {
+		  System.out.println("This is catch block...");
+		  return 20;
+	   }
+	   finally 
+	   {
+		   System.out.println("This is finally block...");
+		   return 30;
+	   }
+	  // System.out.println("..."); un reachable line
+   }
+}
