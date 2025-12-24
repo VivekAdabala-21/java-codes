@@ -1,0 +1,21 @@
+import java.io.IOException;
+public class Try_With_Catch 
+{
+	public static void receive() throws IOException
+	   {
+	 	  
+	   }
+   public static void main(String []args)
+   {
+	   try
+       {
+		receive(); // must be handled either try-catch or throws
+	   } 
+	   catch (IOException e) 
+	   {
+		
+		 e.printStackTrace();
+	   }
+   }
+   
+}
