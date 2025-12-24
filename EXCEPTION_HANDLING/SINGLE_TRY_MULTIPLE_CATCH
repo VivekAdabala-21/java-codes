@@ -1,0 +1,31 @@
+public class Try_With_Catch 
+{
+   public static void main(String []args)
+   {
+	   try
+		 {
+			int []a = {3,6,8};
+			System.out.println(a[3]);
+			
+			System.out.println(10/0);
+			  
+		 }
+	    
+     catch (ArithmeticException ae) 
+		 {
+			System.err.println("Division by Zero problem...");
+		 }
+	   
+	 catch (ArrayIndexOutOfBoundsException ai) 
+		 {
+			
+			System.err.println("Array index problem...");
+		 }
+	   
+    catch (Exception e)                                        // IT IS SUPER CLASS BECAUSE WE HAVE TO WRITE IT IN LAST
+		{
+			System.err.println("Super catch block must be last");
+		}
+		
+   }
+}
