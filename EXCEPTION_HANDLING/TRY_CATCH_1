@@ -1,0 +1,20 @@
+public class Try_With_Catch 
+{
+   public static void main(String []args)
+   {
+	   System.out.println("try block is started");
+	   try
+	   {
+		  int x=10;
+		  int y=0;
+		  int z=x/y;
+		  System.out.print(z);
+		  System.out.print("value is printed");
+	   }
+	   catch(Exception a)
+	   {
+	       System.out.println(a.getMessage());
+	   }
+	   System.out.println(" try and catch block executed successfully");
+   }
+}
