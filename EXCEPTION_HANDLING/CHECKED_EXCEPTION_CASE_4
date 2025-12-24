@@ -1,0 +1,35 @@
+/*
+Case-4 
+------
+If a superclass method declares a checked exception using the throws keyword, the overriding method in the subclass
+may or may not have throws checked exception.
+If subclass method declare throws checked exception must be same compare to superclass method exception.
+We cannot declare superclass Exception in the subclass method.
+*/
+
+package com.vr.exception;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+class Super 
+{
+	void test()throws  FileNotFoundException
+	{
+		
+	}
+}
+class Sub extends Super
+{
+	@Override
+	void test() throws  IOException  // Error
+	{
+		
+	}
+}
+public class TryCatchWithCheckedException 
+{
+
+}
+
+Note : FileNotFoundException is a subclass of IOException.
