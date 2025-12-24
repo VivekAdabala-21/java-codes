@@ -1,0 +1,21 @@
+public class Try_With_Catch 
+{
+   public static void main(String []args)
+   {
+	   try
+		 {
+			String str ="java";
+			int i =Integer.parseInt(str);
+			System.out.println(i);
+			
+		 }
+		 catch(Exception e)
+		 {
+			 e.printStackTrace();
+		 }
+		 finally 
+		 {
+			System.out.println("Resource will be handled");
+		 }
+   }
+}
