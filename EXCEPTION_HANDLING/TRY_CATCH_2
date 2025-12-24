@@ -1,0 +1,23 @@
+public class Try_With_Catch 
+{
+   public static void main(String []args)
+   {
+	   Scanner sc =new Scanner(System.in);
+		 
+		 try
+		 {
+			 System.out.println("Enter a value :");
+			 int a=sc.nextInt();
+			 System.out.println("Enter b value :");
+			 int b=sc.nextInt();
+			 System.out.println("Your division is :"+a/b);
+			  
+		 }
+		 catch (Exception e) 
+		 {
+			System.err.println(e.getMessage()); // it will provide only Exception
+			e.printStackTrace(); // it will provide complete information about exception
+			
+		 }
+   }
+}
