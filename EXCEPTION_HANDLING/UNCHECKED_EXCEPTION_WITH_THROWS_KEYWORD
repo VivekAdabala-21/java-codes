@@ -1,0 +1,16 @@
+import java.io.IOException;
+public class Try_With_Catch 
+{
+	 public static void main(String[] args) 
+     {
+   	 
+			receive(); // Possible
+		
+     }
+     
+     public static void receive() throws ArithmeticException
+     {
+   	  
+     }
+   
+}
