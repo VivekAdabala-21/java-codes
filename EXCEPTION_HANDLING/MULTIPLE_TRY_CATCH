@@ -1,0 +1,35 @@
+public class Try_With_Catch 
+{
+   public static void main(String []args)
+   {
+	   try
+		 {
+			int []a = {3,6,8};
+			System.out.println(a[3]);
+			  
+		 }
+		 catch (ArrayIndexOutOfBoundsException ai) 
+		 {
+			
+			ai.printStackTrace();
+		 }
+		 try
+		 {
+			 System.out.println(10/0);
+		 }
+		 catch (ArithmeticException ae) 
+		 {
+			ae.printStackTrace();
+		 }
+		 
+		 try
+		 {
+			 String name = null;
+			 System.out.println(name.length());
+		 }
+		 catch (NullPointerException np) {
+			np.printStackTrace();
+		}
+		
+   }
+}
