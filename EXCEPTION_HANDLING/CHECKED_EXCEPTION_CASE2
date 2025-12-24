@@ -1,0 +1,29 @@
+/*
+Case-2 
+------
+If the try block does not throw an exception, the catch block is ignored, 
+even if it is written to catch Exception or Throwable, which are superclasses 
+of all exception types whether they are checked or unchecked.
+package com.vr.exception;
+*/
+
+public class TryCatchWithCheckedException
+{
+   public static void main(String[] args) {
+	
+	   try
+	   {
+		   
+	   }
+	   
+	   /*catch (Exception e) 
+	   {
+		 e.printStackTrace();
+	   }*/
+	   
+	   catch (Throwable t) 
+	   {
+		  t.printStackTrace();
+	   }
+}
+}
