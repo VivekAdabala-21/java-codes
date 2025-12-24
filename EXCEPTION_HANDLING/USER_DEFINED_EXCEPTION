@@ -1,0 +1,53 @@
+// To Check Username and password is valid or not.    
+   
+package com.vr.exception;
+
+import java.util.Scanner;
+
+@SuppressWarnings("serial")
+class InvalidUserException extends Exception 
+{
+    public InvalidUserException() 
+    {
+        super("Invalid user credentials");
+    }
+
+	public InvalidUserException(String message) 
+	{
+	    super(message);
+	}
+}
+public class UserDefinedException 
+{ 
+	
+    public static void main(String[] args) 
+    {
+    	 // Dummy user credentials
+        String userName = "Aswin";
+        int userPwd = 12345;
+        
+		Scanner sc =new Scanner(System.in);
+		try(sc)
+		{
+			System.out.println("Enter Username:");
+			String name = sc.nextLine();
+			System.out.println("Enter Password:");
+			int pwd = sc.nextInt();
+			
+			if(userName.equals(name) && userPwd == pwd)
+			{
+				System.out.println("Log in successful Welcome "+ userName);
+			}
+			else
+			{
+				throw new InvalidUserException("Invalid Username");
+			}
+		}
+		catch (InvalidUserException i) 
+		{
+			System.err.println(i);
+		}
+		
+	}
+    
+}
