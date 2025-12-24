@@ -1,0 +1,24 @@
+public class TryWithMultiCatch
+{
+    public static void main(String[] args) 
+    {
+		 
+		 try
+		 {
+			 String name =null;
+			 System.out.println(name.length());
+			int []a = {3,6,8};
+			System.out.println(a[3]);
+			
+			System.out.println(10/0);
+			  
+		 }
+		 catch (ArrayIndexOutOfBoundsException | ArithmeticException ae) 
+		 {
+			
+			ae.printStackTrace();
+		 }
+		
+		
+	}
+}
