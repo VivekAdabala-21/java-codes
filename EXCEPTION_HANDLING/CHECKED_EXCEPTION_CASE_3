@@ -1,0 +1,43 @@
+/*
+Case-3 
+------
+If a superclass method does not declare any checked exceptions, then the overriding method in the subclass 
+cannot declare new checked exceptions.
+If we try to declare Checked Exception to subclass method it will give a compile time error.
+We can create new Unchecked exception to the override method.
+*/
+
+package com.vr.exception;
+
+import java.io.IOException;
+
+class Super {
+    void method() 
+    {
+        // No checked exception thrown
+    }
+}
+
+class Sub extends Super 
+{
+    // Compile-time error Cannot throw checked exception here
+    void method() throws IOException  
+    { 
+        
+    }
+    
+	/*
+	// Allowed throwing unchecked exception
+	void method() throws NullPointerException 
+	{ 
+	    
+	}*/
+}
+
+public class TryCatchWithCheckedException
+{
+   public static void main(String[] args) 
+   {
+	
+   }
+}
