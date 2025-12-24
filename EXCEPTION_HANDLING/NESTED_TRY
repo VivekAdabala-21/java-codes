@@ -1,0 +1,24 @@
+public class Try_With_Catch 
+{
+   public static void main(String []args)
+   {
+	   try // Outer try
+		  {
+			  System.out.println(10/2);
+			  
+			  try // Nested try 
+			  {
+				  String str = null;
+				  System.out.println(str.length());
+			  }
+			  catch (Exception e) 
+			  {
+				System.err.println(e.getMessage());
+			  }
+		  }
+		  catch (Exception e)  // Outer catch
+		  {
+			e.printStackTrace();
+		  }
+   }
+}
