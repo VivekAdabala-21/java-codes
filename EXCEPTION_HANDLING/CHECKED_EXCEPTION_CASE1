@@ -1,9 +1,11 @@
-/*Case-1
+/*
+Case-1
 -------
 Checked Exception is not handled by catch block, 
 but if we try to use catch block with checked exception compiler will show an error. 
          
-// Unchecked Exception supports to catch block.*/
+ Unchecked Exception supports to catch block.
+*/
 
 
 
