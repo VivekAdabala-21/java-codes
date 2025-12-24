@@ -1,0 +1,18 @@
+public class Try_With_Catch 
+{
+   public static void main(String []args)
+   {
+	   
+		 try
+		 {
+			int []a = {3,6,8};
+			System.out.println(a[3]);
+			  
+		 }
+		 catch (ArrayIndexOutOfBoundsException ai) 
+		 {
+			
+			ai.printStackTrace();
+		 }
+   }
+}
