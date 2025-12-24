@@ -1,0 +1,17 @@
+public class Try_With_Catch 
+{
+   public static void main(String []args)
+   {
+	   System.out.println("Main method started");
+		 try
+		 {
+		    //System.out.println("This is try block");
+			System.out.println(8/0);
+		 }
+		 finally 
+		 {
+			System.out.println("Resource will be handled");
+		 }
+		 System.out.println("Main method ended");
+   }
+}
