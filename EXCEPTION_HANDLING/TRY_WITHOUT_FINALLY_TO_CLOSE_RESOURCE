@@ -1,0 +1,24 @@
+public class Try_With_Catch 
+{
+   public static void main(String []args)
+   {
+	   Scanner sc =new Scanner(System.in);
+		
+		 try(sc) // Try with resource
+		 {
+			System.out.println("Enter Employee Name:");
+			String name =sc.nextLine();
+			
+			System.out.println("Enter Employee Address");
+			String addrs=sc.nextLine();
+			
+			System.out.println("Employee Name is :"+name);
+			System.out.println("Employee Address is :"+addrs);
+		 }
+		 catch(Exception e)
+		 {
+			 e.printStackTrace();
+		 }
+
+   }
+}
