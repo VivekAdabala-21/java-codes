@@ -1,0 +1,33 @@
+package com.vr.exception;
+
+public class ExceptionPropagation
+{
+      public static void main(String[] args) 
+      {
+		System.out.println("Main method is started");
+		try
+		{
+			method_1();
+		}
+		catch (Exception e) 
+		{
+			System.out.println("Exception handled in main()");
+		}
+		System.out.println("Main method is ended");
+       }
+      
+      public static void method_1()
+      {
+    	  System.out.println("Method-1 started...");
+    	  method_2();
+    	  System.out.println("Method-1 ended..."); // This line not printed
+      }
+      
+      public static void method_2()
+      {
+    	 String name =null;
+    	 System.out.println(name.length());
+      }
+}
+
+Note : In the above program method_1 and method_2 terminated by JVM, and exception handled in main method.
