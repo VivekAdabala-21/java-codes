@@ -1,0 +1,45 @@
+/*
+Case-5
+------
+Inside static and instance block allowed try and catch, finally,throw keywords[except throws].
+*/
+
+package com.vr.exception;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+class Super 
+{
+	// instance
+	{
+		try
+		{
+			 throw new ArrayIndexOutOfBoundsException();
+		}
+	        catch (Exception e) 
+		{
+		e.printStackTrace();
+	        }
+		finally 
+		{
+			
+		}
+		
+		throws new IOException(); // Error
+	}
+	// static block
+	static 
+	{
+		throws new FileNotFoundException(); // Error
+	}
+	
+	
+}
+
+public class TryCatchWithCheckedException 
+{
+
+}
+
+Note : throws keyword not allowed inside static and instance block.
