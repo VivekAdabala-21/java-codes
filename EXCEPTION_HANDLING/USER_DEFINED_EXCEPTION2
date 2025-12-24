@@ -1,0 +1,50 @@
+// To check person age is valid or not for vote.
+
+package com.vr.exception;
+
+import java.util.Scanner;
+
+@SuppressWarnings("serial")
+class InvalidAgeException extends RuntimeException
+{
+    public InvalidAgeException() 
+    {
+        super("Your not eligible for vote.");
+    }
+
+	public InvalidAgeException(String message) 
+	{
+	    super(message);
+	}
+}
+public class UserDefinedException 
+{ 
+	
+    public static void main(String[] args) 
+    {
+    	
+         final int AGE = 18;
+		Scanner sc =new Scanner(System.in);
+		try(sc)
+		{
+			
+			System.out.println("Enter Age:");
+			int age = sc.nextInt();
+			
+			if(AGE <= age)
+			{
+				System.out.println("Your are eligible for vote... ");
+			}
+			else
+			{
+				throw new InvalidAgeException("Invalid Age");
+			}
+		}
+		catch (InvalidAgeException i) 
+		{
+			System.err.println(i);
+		}
+		
+	}
+    
+}
