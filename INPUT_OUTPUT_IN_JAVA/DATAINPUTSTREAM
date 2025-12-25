@@ -1,0 +1,17 @@
+package learn1;
+import java.io.DataInputStream;
+import java.io.IOException;
+public class DataInputStreamTest {
+	
+		public static void main(String[]args) throws Exception
+		{
+			DataInputStream dis = new DataInputStream(System.in);
+			System.out.println("Enter your name :");
+			 String name = dis.readLine(); // Deprecated
+			 System.out.println("Enter your age :");
+			 String s = dis.readLine(); 
+			 int age = Integer.parseInt(s);
+			 System.out.println("Your name is :"+name);
+			 System.out.println("Your age is :"+age);
+		}
+}
