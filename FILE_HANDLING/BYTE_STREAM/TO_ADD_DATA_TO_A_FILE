@@ -1,0 +1,14 @@
+package Files;
+import java.io.FileOutputStream;
+public class File4 
+{
+   public static void main(String[]args) throws Exception
+   {
+	   FileOutputStream fos = new FileOutputStream("D:\\vivek\\1.txt");
+	   
+	   String a= "HITMAN MANIA";
+	   byte[] b= a.getBytes();
+	   fos.write(b);
+	   System.out.println("data is successfully added into the file");
+   }
+}
