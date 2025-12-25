@@ -1,0 +1,28 @@
+package Files;
+import java.io.SequenceInputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+public class File8 
+{
+	public static void main(String[]args) throws Exception
+	{
+		FileInputStream fis1=new FileInputStream("D:\\vivek\\2.txt");
+		FileInputStream fis2=new FileInputStream("D:\\vivek\\3.txt");
+		SequenceInputStream sis =new SequenceInputStream(fis1,fis2);
+		
+		try(fis1;fis2;sis)
+		{
+			int i;
+			while((i=sis.read())!=-1)
+			{
+		
+				System.out.println((char)i);
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+  
+}
