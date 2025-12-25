@@ -12,7 +12,7 @@ public class File7
 	 var f2=new FileOutputStream("D:\\vivek\\3.txt");       //CREATE THIS FILE AND WRITE THE DATA HERE
 	 var f3=new FileOutputStream("D:\\vivek\\1.txt");       //CREATE THIS FILE AND WRITE THE DATA HERE
 	 var bout = new ByteArrayOutputStream();
-	 try
+	 try(fis; f1; f2; f3; bout)
 	 {
 		 int i;
 		 while((i=fis.read())!=-1)
