@@ -1,0 +1,48 @@
+package Files;
+import java.io.Serializable;
+
+public class Serial implements Serializable
+{
+      private transient int empId;
+      private String empName;
+      private transient String empAddrs;
+      private double empSalary;
+      
+	public Serial(int empId, String empName, String empAddrs, double empSalary) {
+		super();
+		this.empId = empId;
+		this.empName = empName;
+		this.empAddrs = empAddrs;
+		this.empSalary = empSalary;
+	}
+	@Override
+	public String toString() {
+		return "Employee [empId=" + empId + ", empName=" + empName + ", empAddrs=" + empAddrs + ", empSalary="
+				+ empSalary + "]";
+	}   
+}
+//MAIN CLASS
+
+package Files;
+
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+
+public class Read_Data 
+{
+     public static void main(String[] args) throws Exception
+     {
+		FileInputStream fis = new FileInputStream("D:\\MyFolder\\Employee.txt");
+		
+		ObjectInputStream ois = new ObjectInputStream(fis);
+		
+		try(fis;ois)
+		{
+			System.out.println(ois.readObject());
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	 }
+}
