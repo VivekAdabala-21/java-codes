@@ -1,0 +1,28 @@
+package Files;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+public class File10
+{
+  public static void main(String[]args) throws Exception
+  {
+	  FileInputStream fis = new FileInputStream("D:\\DSC_0157 COPY.jpg");
+	  FileOutputStream fos = new FileOutputStream("D:\\vivek\\vivek1.jpg");
+	  
+	  try(fis;fos)
+	  {
+		  byte[] buffer= new byte[1024];
+		  int bytesRead;
+		  
+		  while((bytesRead=fis.read(buffer))!=-1)
+           {
+	         fos.write(buffer,0,bytesRead);
+           }
+		  System.out.print("image successfully copied");
+	  }
+	  catch(Exception e)
+	  {
+		  e.printStackTrace();
+	  }
+  }
+}
