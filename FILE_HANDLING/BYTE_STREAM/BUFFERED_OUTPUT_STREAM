@@ -1,0 +1,23 @@
+package Files;
+import java.io.FileOutputStream;
+import java.io.BufferedOutputStream;
+public class File11 
+{
+  public static void main(String[]args) throws Exception
+  
+  {
+	  FileOutputStream fis=new FileOutputStream("D:\\vivek\\4.txt");
+	  BufferedOutputStream bis=new BufferedOutputStream(fis);
+	  
+	  try(fis;bis)
+	  {
+		  String s=" CRICKET IS MENS GAME";
+		  byte[]b=s.getBytes();
+		  fis.write(b);
+		  System.out.print("data is successfully added to the file");
+	  }
+	  catch(Exception e) {
+		  System.out.print(e);
+	  }
+  }
+}
