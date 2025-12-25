@@ -1,0 +1,32 @@
+package Files;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+public class File16
+{
+     public static void main(String[] args) throws Exception
+     {
+    	
+         
+         FileOutputStream fos = new FileOutputStream( "D:\\MyFolder\\primitive.txt");
+         
+         DataOutputStream dos = new DataOutputStream(fos);
+         // Data inserted to files
+         dos.writeByte(2);
+         dos.writeInt(34);
+         dos.writeChar('A');
+         
+         // Data reads from the files
+         FileInputStream fis = new FileInputStream( "D:\\MyFolder\\primitive.txt");
+         DataInputStream dis= new DataInputStream(fis);
+         byte b = dis.readByte();
+         int  i = dis.readInt();
+         char c = dis.readChar();
+         
+         System.out.print(b+" "+ i +" "+ c+" ");
+        
+     }
+	 
+}
