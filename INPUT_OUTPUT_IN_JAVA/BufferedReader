@@ -1,0 +1,30 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+public class DataInputStreamTest {
+	
+		public static void main(String[]args) throws Exception
+		{
+			BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+			try
+			{
+				System.out.println("Eneter your age :");
+				   String a = br.readLine();
+				   int age = Integer.parseInt(a);
+				   System.out.println("Enter your name :");
+				   String name = br.readLine();
+				   if(age > 5)
+				   {
+					   System.out.println(" Hello " + name + ", you need a bus ticket.");
+				   }
+				   else
+				   {
+					   System.out.println(" Hello " + name + ", you don’t need a bus ticket.");
+				   }
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+		}
+}
