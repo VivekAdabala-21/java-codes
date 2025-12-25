@@ -1,0 +1,20 @@
+package Files;
+import java.io.FileWriter;
+public class File13 {
+	public static void main(String[]args) throws Exception
+	{
+		
+		FileWriter fw= new FileWriter("D:\\vivek\\8.txt");
+		
+		try(fw)
+		{
+			fw.write("you miss I hit");
+			System.out.print("data is added into the file");
+		}
+		catch(Exception e)
+		{
+			System.out.print(e);
+		}
+	}
+
+}
