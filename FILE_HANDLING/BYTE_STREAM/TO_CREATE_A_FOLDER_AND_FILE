@@ -1,0 +1,28 @@
+package Files;
+import java.io.File;
+public class File2 
+{
+  public static void main(String[]args) throws Exception
+  
+  {
+	  File folder =new File("D:\\vivek");
+	  File file=new File(folder,"1.txt");
+	  
+	  if(!folder.exists() && folder.mkdirs())
+	  {
+		  System.out.print("folder created "+folder.getPath());
+	  }
+	  else if(file.exists())
+	  {
+		  System.out.print("file is already existed"+file.getName());
+	  }
+	  else if(file.createNewFile())
+	  {
+		  System.out.print("file is created successfully"+file.getName());
+	  }
+	  else
+	  {
+		  System.out.print("failed to create file");
+	  }
+  }
+}
