@@ -1,0 +1,32 @@
+package Files;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ByteArrayOutputStream;
+public class File7 
+{
+ public static void main(String[]args) throws Exception
+ {
+	 var fis = new FileInputStream("D:\\MYFOLDER\\A.txt");  //READ THE DATA HERE
+	 var f1=new FileOutputStream("D:\\vivek\\2.txt");       //CREATE THIS FILE AND WRITE THE DATA HERE
+	 var f2=new FileOutputStream("D:\\vivek\\3.txt");       //CREATE THIS FILE AND WRITE THE DATA HERE
+	 var f3=new FileOutputStream("D:\\vivek\\1.txt");       //CREATE THIS FILE AND WRITE THE DATA HERE
+	 var bout = new ByteArrayOutputStream();
+	 try
+	 {
+		 int i;
+		 while((i=fis.read())!=-1)
+		 {
+			 bout.write((byte)i);   //DATA IS COPIED INTO BYTE ARRAY
+		 }
+		 bout.writeTo(f3);
+		 bout.writeTo(f2);
+		 bout.writeTo(f1);
+		 System.out.print("data added to files succesfully");
+	 }
+	 catch(Exception e)
+	 {
+		 e.printStackTrace();
+	 }
+ }
+}
