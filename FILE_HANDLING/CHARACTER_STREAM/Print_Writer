@@ -1,0 +1,19 @@
+package Files;
+import java.io.PrintWriter;
+public class File15 
+{
+   public static void main(String []args) throws Exception
+   {
+	    PrintWriter pw =new PrintWriter("D:\\VIVEK\\9.txt");
+	    
+	    try(pw)
+	    {
+	    	int x =30;
+	    	pw.printf("register number is %s",x);
+	    }
+	    catch(Exception e)
+	    {
+	    	System.out.print(e);
+	    }
+   }
+}
