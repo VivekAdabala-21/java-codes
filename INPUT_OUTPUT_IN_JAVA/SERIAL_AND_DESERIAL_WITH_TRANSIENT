@@ -1,0 +1,81 @@
+File-1 Employee.java
+---------------------
+package com.vr.se_de_serialization;
+
+import java.io.Serializable;
+
+public class Employee implements Serializable
+{
+      private transient int empId;
+      private String empName;
+      private transient String empAddrs;
+      private double empSalary;
+      
+	public Employee(int empId, String empName, String empAddrs, double empSalary) {
+		super();
+		this.empId = empId;
+		this.empName = empName;
+		this.empAddrs = empAddrs;
+		this.empSalary = empSalary;
+	}
+	@Override
+	public String toString() {
+		return "Employee [empId=" + empId + ", empName=" + empName + ", empAddrs=" + empAddrs + ", empSalary="
+				+ empSalary + "]";
+	}
+      
+      
+}
+
+File-2 StoreEmployeeData.java
+-----------------------------
+package com.vr.se_de_serialization;
+
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+// Serialization
+public class StoreEmployeeData 
+{
+    public static void main(String[] args) throws Exception
+    {
+		FileOutputStream fos = new FileOutputStream("D:\\MyFolder\\Employee.txt");
+		ObjectOutputStream oos = new ObjectOutputStream(fos);
+		
+		try(fos;oos)
+		{
+			Employee e = new Employee(11,"Charan", "Hyd", 67000.0);
+			oos.writeObject(e);
+		}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+	}
+}
+
+File-3 ReadEmployeeData.java
+-----------------------------
+package com.vr.se_de_serialization;
+
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+
+// De-serialization
+public class ReadEmployeeData 
+{
+   public static void main(String[] args) throws Exception 
+   {
+	  FileInputStream fis = new FileInputStream("D:\\MyFolder\\Employee.txt");
+	  ObjectInputStream ois = new ObjectInputStream(fis);
+	  
+	  try(fis;ois)
+	  {
+		  System.out.println(ois.readObject());
+	  }
+	  catch (Exception e) 
+	  {
+	       e.printStackTrace();
+	  }
+	
+   }
+}
