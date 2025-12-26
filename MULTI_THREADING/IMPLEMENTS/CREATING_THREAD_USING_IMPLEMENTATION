@@ -1,0 +1,62 @@
+package com.vr.thread;
+
+import java.util.Random;
+
+class BusTicket implements Runnable
+{
+	
+	private String name;
+	
+	public BusTicket(String name)
+	{
+		
+		this.name=name;
+	}
+
+	@Override
+	public void run() 
+	{
+		// Generates a random ticket number between 0 to 49
+		int seatNo = new Random().nextInt(50); 
+		System.out.println("Bus Ticket is confirmed to :"+name);
+		System.out.println("Bus Ticket Seat Number is :"+seatNo);
+		System.out.println("______________________\n");
+	}
+	
+}
+
+class TrainTicket implements Runnable
+{
+    private String name;
+    
+    public TrainTicket(String name)
+    {
+    	this.name=name;
+    }
+    @Override
+	public void run() 
+    {
+    	        int seatNo = new Random().nextInt(100)+400;
+		System.out.println("Train ticket is confirmed to :"+name);
+		System.out.println("Train Ticket Number is "+seatNo);
+		
+    }
+}
+public class CreateThread
+{
+	
+     public static void main(String[] args) throws InterruptedException 
+     {
+    	// Book the bus ticket
+    	 Thread t1 = new Thread(new BusTicket("Charan"));
+    	 t1.start();
+    	 t1.join();
+    	
+    	 // Book the train ticket
+    	 Thread t2 = new Thread(new TrainTicket("Green"));
+    	 t2.start(); 	 
+    	 // start the threads 
+    
+    	 
+     }
+}
