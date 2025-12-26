@@ -1,0 +1,46 @@
+package com.vr.MutliThreading;
+import java.util.Scanner;
+class Thread_creation extends Thread
+{
+	public void run() 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Which table you want print :");
+		int x = sc.nextInt();
+		for( int i=1;i<=10;i++)
+		{
+			// 10 * 1 = 10
+			System.out.println(x +" X "+i+" = "+x*i +"name is "+getName());
+			try 
+			{
+				Thread.sleep(1000); // 1000ms = 1 sec
+			}
+			catch (InterruptedException e) 
+			{
+				
+				e.printStackTrace();
+			}
+		}
+	}
+		
+}
+
+//MAIN METHOD
+package com.vr.MutliThreading;
+
+public class Multithreading_test 
+{
+	public static void main(String[] args) 
+    {
+    	System.out.println("Main thread started..");
+    	
+    	Thread_creation l1 = new Thread_creation();
+    	Thread_creation l2 = new Thread_creation();
+    	l1.setName("king");
+    	l2.setName("queen");
+    	
+    	l1.start();
+    	l2.start();  // HERE WE CANNOT ESTIMATE WHICH THREAD WILL RUN FIRST SO WE USE JOINS
+    }
+    	
+}
