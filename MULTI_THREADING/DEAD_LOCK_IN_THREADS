@@ -1,0 +1,19 @@
+package com.vr.MutliThreading;
+
+public class Report_Test 
+{
+  public static void main(String[]args) throws InterruptedException
+  {
+	  System.out.println("main method is started");
+	   Thread v = Thread.currentThread();
+	   String n= v.getName();
+	   
+	   for(int i=1;i<5;i++)
+	   {
+		   System.out.println(i+"vivek"+n);
+		   Thread.sleep(2000);
+	   }
+	   v.join();
+	   System.out.println("Main Thread is ended...");
+  }
+}
