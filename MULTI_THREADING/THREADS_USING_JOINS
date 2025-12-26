@@ -1,0 +1,49 @@
+package com.vr.MutliThreading;
+
+public class Report extends Thread 
+{
+	@Override
+	public void run() 
+	{
+		String name=Thread.currentThread().getName();
+		
+		if(name.equals("database"))
+		{
+			 System.out.println("Generating report by " + name);
+	        try 
+	        {
+	            Thread.sleep(1000); // Time taken to generate report
+	        } 
+	        catch (InterruptedException e) 
+	        {
+	            System.err.println("Report generation interrupted.");
+	        }
+	        System.out.println("Report generation completed by "+name);
+		} 
+		else if(name.equals("email"))
+		{
+			System.out.println("Database report send to client by "+name);
+		}
+	}	
+}
+
+//MAIN METHOD
+
+package com.vr.MutliThreading;
+
+public class Report_Test 
+{
+  public static void main(String[]args) throws InterruptedException
+  {
+	  System.out.println("main method is started");
+	  Report r1 =new Report();
+	  Report r2 = new Report();
+	  r1.setName("database");
+	  r2.setName("email");
+	  
+	  r1.start();
+    // Current thread (main) waits for r1 to finish
+	  r1.join();
+	  r2.start();
+  }
+}
