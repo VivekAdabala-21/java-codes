@@ -1,0 +1,19 @@
+package com.vr.MutliThreading;
+
+public class Thread_creation  extends Thread
+{
+	@Override
+	public void run()
+	{
+		System.out.print("user thread is running");
+	}
+    public static void main(String[]args)
+    {
+    	System.out.println("main thread is started");
+    	Thread_creation t1 =new Thread_creation(); //BORN STATE
+    	
+    	t1.start();              //RUNNABLE 
+      System.out.println("main thread is ended");
+        
+    }
+}
